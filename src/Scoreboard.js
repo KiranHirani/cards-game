@@ -7,7 +7,7 @@ const Scoreboard = ({ results }) => {
       <ul className="score-list">
         {results.map((result, index) => {
           let returnVal = "Round " + (index + 1) + " : Goes to " + result;
-          return <li key="index">{returnVal}</li>;
+          return <li key={index}>{returnVal}</li>;
         })}
       </ul>
     </div>

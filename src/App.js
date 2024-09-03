@@ -16,7 +16,7 @@ function App() {
   };
 
   return (
-    <div class="card shadow deck-game">
+    <div className="card shadow deck-game">
       <div className="container full-height">
         <div className="d-flex justify-content-center align-items-center game-heading">
           <h3 className="p-1">{GAME_NAME}</h3>

@@ -60,7 +60,7 @@ const PlayGame = ({ shuffledDeck, redo }) => {
         <div className="row full-height">
           {[Player_1, Player_2].map((player, index) => {
             return (
-              <div className="col">
+              <div className="col" key={player}>
                 <h4>{player}</h4>
                 <div className="card shadow player-card">
                   <div className="m-2 inside-player-card">
