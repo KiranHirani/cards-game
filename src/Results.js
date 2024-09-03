@@ -2,7 +2,7 @@ import React from "react";
 import { Player_1, Player_2, NUM_ROUNDS } from "./utils";
 
 const Results = ({ results, redo }) => {
-  let firstPlayerScore = results.filter((result) => result == Player_1).length;
+  let firstPlayerScore = results.filter((result) => result === Player_1).length;
   let winner, score;
 
   if (firstPlayerScore > NUM_ROUNDS / 2) {
