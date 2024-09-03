@@ -8,5 +8,6 @@ Rules:
 - if there's a tie, use the suit for tie breaker ♣ < ♦ < ♥ < ♠
 
 So, for 2 players:
-♣ 5 > ♠ 1
-♠ 5 > ♥ 5
+
+- ♣ 5 > ♠ 1
+- ♠ 5 > ♥ 5
