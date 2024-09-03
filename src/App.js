@@ -16,29 +16,14 @@ function App() {
   };
 
   return (
-    <div
-      class="card shadow"
-      style={{
-        width: "70vw",
-        height: "70vh",
-        marginTop: "15vh",
-        marginLeft: "15vw",
-      }}
-    >
-      {" "}
-      <div className="container" style={{ height: "100%" }}>
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ height: "20%" }}
-        >
-          <h3 style={{ padding: "10px" }}>{GAME_NAME}</h3>
+    <div class="card shadow deck-game">
+      <div className="container full-height">
+        <div className="d-flex justify-content-center align-items-center game-heading">
+          <h3 className="p-1">{GAME_NAME}</h3>
         </div>
-        <div
-          className="d-flex align-items-center justify-content-center"
-          style={{ height: "80%" }}
-        >
+        <div className="d-flex align-items-center justify-content-center game-body">
           {play ? (
-            <PlayGame shuffledDeck={shuffledDeck} redo={setPlay} />
+            <PlayGame shuffledDeck={shuffledDeck} redo={() => setPlay(false)} />
           ) : (
             <button className="btn btn-primary" onClick={startGame}>
               Play

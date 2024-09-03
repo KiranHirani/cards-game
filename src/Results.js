@@ -20,8 +20,8 @@ const Results = ({ results, redo }) => {
       <div>{winner} won!!</div>
       <div>Total {score} rounds won!!</div>
       <div className="redo mt-3">
-        <button className="btn btn-success" onClick={() => redo(false)}>
-          Redo
+        <button className="btn btn-success" onClick={redo}>
+          Restart Game
         </button>
       </div>
     </div>

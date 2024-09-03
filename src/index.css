@@ -34,3 +34,38 @@
 .cards {
   width: 50%;
 }
+
+.deck-game {
+  width: 70vw;
+  height: 70vh !important;
+  margin-top: 15vh;
+  margin-left: 15vw;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.game-heading {
+  height: 20%;
+}
+
+.game-body {
+  height: 80%;
+}
+
+.score-list {
+  padding: unset;
+}
+
+.player-card {
+  height: 9em !important;
+  width: 7em;
+  font-size: 1.5rem;
+}
+
+.inside-player-card {
+  height: 100%;
+  border: 2px solid red;
+  border-radius: 10px;
+}

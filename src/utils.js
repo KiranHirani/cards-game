@@ -39,6 +39,13 @@ const NUM_ROUNDS = 5;
 let cardMap = new Map();
 cards.forEach((card, index) => cardMap.set(card, index));
 
+const cardTypeRank = {
+  "♣": 1,
+  "♦": 2,
+  "♥": 3,
+  "♠": 4,
+};
+
 const GAME_NAME = "5toWin";
 const Player_1 = "Player 1";
 
@@ -54,4 +61,5 @@ export {
   cardMap,
   cards,
   NUM_ROUNDS,
+  cardTypeRank,
 };

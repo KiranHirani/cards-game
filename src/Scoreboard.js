@@ -4,9 +4,9 @@ const Scoreboard = ({ results }) => {
   return (
     <div className="scoreboard-component">
       <h4 className="score-heading">Scores</h4>
-      <ul style={{ padding: "unset" }}>
+      <ul className="score-list">
         {results.map((result, index) => {
-          let returnVal = "Round " + (index + 1) + " : " + result;
+          let returnVal = "Round " + (index + 1) + " : Goes to " + result;
           return <li key="index">{returnVal}</li>;
         })}
       </ul>
