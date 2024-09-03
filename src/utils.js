@@ -37,7 +37,9 @@ const cards = [
 const NUM_ROUNDS = 5;
 
 let cardMap = new Map();
-cards.forEach((card, index) => cardMap.set(card, index));
+[...cards.slice(1), cards[0]].forEach((card, index) =>
+  cardMap.set(card, index)
+);
 
 const cardTypeRank = {
   "♣": 1,
