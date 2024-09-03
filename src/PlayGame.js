@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Scoreboard from "./Scoreboard";
 import Results from "./Results";
-import { Player_1, Player_2, cardMap } from "./utils";
+import { Player_1, Player_2, cardMap, NUM_ROUNDS } from "./utils";
 
-const PlayGame = ({ shuffledDeck }) => {
+const PlayGame = ({ shuffledDeck, redo }) => {
   const [round, setRound] = useState(0);
   const [results, setResults] = useState([]);
   const cardTypeRank = {
@@ -38,39 +38,56 @@ const PlayGame = ({ shuffledDeck }) => {
     setRound((prevValue) => prevValue + 1);
   };
 
+  if (results.length == NUM_ROUNDS) {
+    return (
+      <div className="play-game text-center">
+        <Results results={results} redo={redo} />
+      </div>
+    );
+  }
+
   return (
-    <div className="play-game">
-      {results.length < 5 ? (
-        <div>
-          <button
-            className="btn btn-primary"
-            onClick={calculateResultsAndUpdateRound}
-          >
-            Deal
-          </button>
-          <div className="mt-3 d-flex justify-content-around">
-            <div className="cards d-flex justify-content-around">
-              <div>
-                <h4>{Player_1}</h4>
-                <div className="card fs-5 shadow">
-                  {shuffledDeck[round * 2]}
+    <div
+      className="play-game container"
+      style={{ height: "100%", padding: "10px" }}
+    >
+      <div style={{ height: "20%" }} className="container">
+        <button
+          className="btn btn-primary"
+          onClick={calculateResultsAndUpdateRound}
+        >
+          Deal
+        </button>
+      </div>
+      <div style={{ height: "80%" }} className="container">
+        <div className="row" style={{ height: "100%" }}>
+          {[Player_1, Player_2].map((player, index) => {
+            return (
+              <div className="col">
+                <h4>{player}</h4>
+                <div
+                  className="card shadow"
+                  style={{ height: "9em", width: "7em", fontSize: "1.5rem" }}
+                >
+                  <div
+                    className="m-2"
+                    style={{
+                      height: "100%",
+                      border: "2px solid red",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <div className="m-1">{shuffledDeck[round * 2 + index]}</div>
+                  </div>
                 </div>
               </div>
-              <div>
-                <h4>{Player_2}</h4>
-                <div className="card fs-5 shadow">
-                  {shuffledDeck[round * 2 + 1]}
-                </div>
-              </div>
-            </div>
-            <div className="scoreboard">
-              <Scoreboard results={results} />
-            </div>
+            );
+          })}
+          <div className="scoreboard col">
+            <Scoreboard results={results} />
           </div>
         </div>
-      ) : (
-        <Results results={results} />
-      )}
+      </div>
     </div>
   );
 };

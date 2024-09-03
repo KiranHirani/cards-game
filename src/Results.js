@@ -1,7 +1,7 @@
 import React from "react";
 import { Player_1, Player_2, NUM_ROUNDS } from "./utils";
 
-const Results = ({ results }) => {
+const Results = ({ results, redo }) => {
   let firstPlayerScore = results.filter((result) => result == Player_1).length;
   let winner, score;
 
@@ -19,6 +19,11 @@ const Results = ({ results }) => {
       <h5>Game Over!!!</h5>
       <div>{winner} won!!</div>
       <div>Total {score} rounds won!!</div>
+      <div className="redo mt-3">
+        <button className="btn btn-success" onClick={() => redo(false)}>
+          Redo
+        </button>
+      </div>
     </div>
   );
 };
